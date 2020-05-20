@@ -1,5 +1,5 @@
 <footer>
-	<p>copyright@\(*.*)/</p>
+	<p>copyright@__\(*.*)/__</p>
 </footer>
 
 </body>
