@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2f8afa56-3efa-42c8-8180-86bbe5ee0e70" name="bitlamp" url="http://sreynolds9.bitlampsites.com/iwd">
+        <fileTransfer rootFolder="/public_html/iwd" accessType="SFTP" host="sreynolds9.bitlampsites.com" port="22" sshConfigId="6ff26bcd-3a4d-4f65-9b66-681da45af7e0" sshConfig="sreynolds9@sreynolds9.bitlampsites.com:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
