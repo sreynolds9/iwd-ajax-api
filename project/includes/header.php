@@ -17,11 +17,16 @@ session_start();
 </head>
 
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><a href="#"></a>
-				</li>
-			</ul>
-		</nav>
-	</header>
+<div class="container">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-fixed-top">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="simple-ajax.php">Ajax Array</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
