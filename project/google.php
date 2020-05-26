@@ -10,8 +10,9 @@ include('includes/header.php');
     <div id="searchBooks">
         <form id="bookform">
             <div class="input-field">
-                <label for="searchBooks">Search Books</label>
-                <input type="search" id="books">
+                <h1>Search Books</h1>
+                <label for="books">Search Books</label>
+                <input id="books" type="search">
             </div>
             <button type="button" class="btn btn-info">Search Books</button>
         </form>

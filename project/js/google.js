@@ -30,9 +30,9 @@ $(document).ready(function(){
 
             $.get("https://www.googleapis.com/books/v1/volumes?q=" + search, function(response){
                 for (i=0;i<response.items.length;i++){
-                    title = $('<h5>' + response.items[i].volumeInfo.title + '</h5>');
+                    title = $('<h3>' + response.items[i].volumeInfo.title + '</h3>');
                     author = $('<h5>' + response.items[i].volumeInfo.authors + '</h5>');
-                    img = $('<img class="card"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="btn">Read More</button></a>');
+                    img = $('<img><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="btn">Read More</button></a>');
                     url = response.items[i].volumeInfo.imageLinks.thumbnail;
                     img.attr('src',url); //attaches the image url to the image
                     title.appendTo("#result");
