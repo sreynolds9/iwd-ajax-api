@@ -45,28 +45,6 @@ $(document).ready(function(){
     //$.ajax()
     //$.post()
     $.get(
-        'https://www.googleapis.com/books/v1/volumes', //endpoint
-        {q: '🐝 intitle', maxResults:30},
-        function (data) {
-            //data holds everything that is returned
-            //check to see if the response is good
-
-            //loop through results
-            for(let i = 0; i < data.items.length; i++){
-                $('<h3>').html(data.items[i].volumeInfo.title).appendTo('#results');
-                $('<p>').html(data.items[i].volumeInfo.authors.join(', ')).appendTo('#results');
-                $('<img>').attr('src', data.items[i].volumeInfo.imageLinks.thumbnail).appendTo('#results');
-            }
-        },
-        'json' //return data type you expect
-    )
-});
-
-$(document).ready(function(){
-    //make ajax request
-    //$.ajax()
-    //$.post()
-    $.get(
         'https://api.spoonacular.com/recipes/search?apiKey=d9f6f58a6ad541a187a2c058f3877948', //endpoint
         // {q: '🐝 intitle', maxResults:30},
         {q: '', maxResults:5},
