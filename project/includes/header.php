@@ -17,16 +17,22 @@ session_start();
 </head>
 
 <body>
+<header>
+<div class="container-fluid">
 <div class="container">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-fixed-top">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="simple-ajax.php">Ajax Array</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <div class="row">
+        <div class="col-1">
+            <img src="https://webstockreview.net/images/pineapple-clipart-kawaii-19.png">
+        </div>
+        <div class="col-11">
+            <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="simple-ajax.php">Ajax Array</a></li>
+            </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</header>
+<div class="main-content">

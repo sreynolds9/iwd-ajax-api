@@ -1,4 +1,55 @@
 body {
-    font-family: Calibri, serif;
-    background-color: #cdfff5;
+    height: 100%;
+    position: relative;
+    margin-top: 80px;
+}
+body .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+header img {
+    height: 120px;
+    padding: 15px 0;
+}
+
+header {
+    background-color: #343a40;
+    display: flex;
+    align-items: center;
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+}
+nav ul {
+    height: 80px;
+    list-style: none;
+    background-color: #343a40;
+    text-align: center;
+}
+nav li {
+    margin: 20px;
+    float: left;
+    padding: 35px;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #f8d14e;
+}
+.main-content{
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
 }

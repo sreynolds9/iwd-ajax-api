@@ -1,6 +1,8 @@
-<footer>
-	<p>copyright@__\(*.*)/__</p>
+</div>
+<footer class="bg-dark text-center text-light">
+	<p>copyright@&nbsp;&nbsp;&nbsp;(◕ᴥ◕)</p>
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="js/index.js"></script>
 <script src="js/ajax.js"></script>
