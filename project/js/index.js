@@ -1,64 +1,56 @@
-document.getElementById('getPosts').addEventListener('click', getPosts);
-
-function getInfo(id){
-$.ajax({
-    url:"https://api.spoonacular.com/recipes/"+id+"/information?apiKey=d9f6f58a6ad541a187a2c058f3877948",
-    success: function (res) {
-        document.getElementById("sourceLink").innerHTML=res.sourceUrl
-        document.getElementById("sourceLink").href=res.sourceUrl
-        }
-    });
-}
-
-function getRecipes(q){
-    $.ajax({
-        url:"https://api.spoonacular.com/recipes/search?apiKey=d9f6f58a6ad541a187a2c058f3877948&number=1&query="+q,
-        success: function (res) {
-            document.getElementById("output").innerHTML='<h1>'+res.results[0].title+'</h1><br>'
-            // '<img src="'+res.baseUri+res.results[0].image+'" width="400"/>'
-            // '<br> ready in' +res.results.readyInMinutes+" minutes"
-            +getInfo(res.results[0].id)
-        }
-    });
-}
-
-function getPosts(){
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(response => response.json())
-        .then(json => console.log(json))
-    // fetch('https://api.spoonacular.com/recipes/search?apiKey=d9f6f58a6ad541a187a2c058f3877948')
-    //     .then((res) => res.json())
-    //     .then((data) => {
-            let output = '<h2>Posts</h2>';
-            data.forEach(function(post){
-                console.log('output');
-                output += `
-                    <h3>Title: ${post.title}</h3>
-                    <p>Post: ${post.body}</p>
-                `;
-            });
-            document.getElementById('jsonphoutput').innerHTML = output;
-        }
-
 $(document).ready(function(){
+    $("#recipeform").submit(function () {
+        var search = $("#recipes").val();
+        var url = '';
+        var img = '';
+        var title = '';
     //make ajax request
-    //$.ajax()
-    //$.post()
-    $.get(
-        'https://api.spoonacular.com/recipes/search?apiKey=d9f6f58a6ad541a187a2c058f3877948', //endpoint
-        // {q: '🐝 intitle', maxResults:30},
-        {q: '', maxResults:5},
+ $.get('https://api.spoonacular.com/recipes/search?apiKey=d9f6f58a6ad541a187a2c058f3877948&query=', + search,
+        // $.get("https://www.googleapis.com/books/v1/volumes?q=" + search, function(response){
+        //        for (i=0;i<response.items.length;i++){
         function (data) {
             //data holds everything that is returned
-            for(let i = 0; i < data.results.length; i++){
-                $('<h3>').html(data.results[i].title).appendTo('#results2');
 
-                $('<p>').html(data.results[i].readyInMinutes).appendTo('#results');
-                $('<p>').html(data.results[i].servings).appendTo('#results');
-                $('<p>').html(data.results[i].readyInMinutes).appendTo('#results');
-                $('<img>').attr('src', data.results[i].image).appendTo('#results2');
+            //loop through results
+            for(let i = 0; i < data.results.length; i++){
+                title = $('<h2 style="padding-top: 40px;">' + data.results[i].title + '</h2>');
+                img = $('<img style="height: 300px; padding-bottom: 20px;"><br><a href=' + data.results[i].sourceUrl + '><button class="btn btn-success">Read More</button></a>');
+                url = data.baseUri + data.results[i].image;
+                img.attr('src',url); //attaches the image url to the image
+                title.appendTo("#results2");
+                img.appendTo("#results2");
             }
         },
         'json' //return data type you expect
     )
 });
+});
+
+//
+// $(document).ready(function(){
+//     $("#bookform").submit(function () {
+//         var search = $("#books").val();
+//         if (search == ''){
+//             alert("Enter a book to search");
+//         }else{
+//             var url = '';
+//             var img = '';
+//             var title = '';
+//             var author = '';
+//
+//             $.get("https://www.googleapis.com/books/v1/volumes?q=" + search, function(response){
+//                 for (i=0;i<response.items.length;i++){
+//                     title = $('<h5>' + response.items[i].volumeInfo.title + '</h5>');
+//                     author = $('<h5>' + response.items[i].volumeInfo.authors + '</h5>');
+//                     img = $('<img class="card"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="btn">Read More</button></a>');
+//                     url = response.items[i].volumeInfo.imageLinks.thumbnail;
+//                     img.attr('src',url); //attaches the image url to the image
+//                     title.appendTo("#result");
+//                     author.appendTo("#result");
+//                     img.appendTo("#result");
+//                 }
+//             });
+//         }
+//         return false;
+//     });
+// });

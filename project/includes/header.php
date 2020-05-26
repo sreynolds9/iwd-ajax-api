@@ -22,13 +22,14 @@ session_start();
 <div class="container">
     <div class="row">
         <div class="col-1">
-            <img src="https://webstockreview.net/images/pineapple-clipart-kawaii-19.png">
+            <a href="https://i.gifer.com/8iqZ.gif" target="_blank"><img src="https://webstockreview.net/images/pineapple-clipart-kawaii-19.png"></a>
         </div>
         <div class="col-11">
             <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php">Spoontacular</a></li>
                 <li><a href="simple-ajax.php">Ajax Array</a></li>
+                <li><a href="google.php">Google Api</a></li>
             </ul>
             </nav>
         </div>

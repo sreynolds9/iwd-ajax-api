@@ -1,13 +1,7 @@
 <?php
 //people array - TODO Get from API
-$people[] = "Bob";
-$people[] = "Jackson";
-$people[] = "Ann";
-$people[] = "Julian";
-$people[] = "Julio";
-$people[] = "Beth";
-$people[] = "Stephany";
-$people[] = "Stephanie";
+$people = ["Steph", "Stephanie", "Stephany", "Cole", "Morgan", "Jacob", "Andrew", "Lauren", "Alex", "Tyler",
+	"Taylor", "Chris", "Beth", "Bob", "Ann", "Jane", "Jin", "Walt", "Amber", "Dorothy", "Jim", "John"];
 
 
 //Get Query String
