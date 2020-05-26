@@ -79,11 +79,6 @@ $(document).ready(function(){
                 $('<p>').html(data.results[i].servings).appendTo('#results');
                 $('<p>').html(data.results[i].readyInMinutes).appendTo('#results');
                 $('<img>').attr('src', data.results[i].image).appendTo('#results2');
-                "readyInMinutes": 15,
-                    "servings": 2,
-                    "sourceUrl": "http://naturallyella.com/cabbage-salad-with-peanuts/",
-
-
             }
         },
         'json' //return data type you expect
