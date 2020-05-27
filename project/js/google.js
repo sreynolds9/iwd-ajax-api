@@ -20,13 +20,13 @@
 $(document).ready(function(){
     $("#bookform").submit(function () {
         var search = $("#books").val();
-        if (search == ''){
-            alert("Enter a book to search");
+        if (search == ""){
+            alert("Nothing to search");
         }else{
-            var url = '';
-            var img = '';
-            var title = '';
-            var author = '';
+            var url = "";
+            var img = "";
+            var title = "";
+            var author = "";
 
             $.get("https://www.googleapis.com/books/v1/volumes?q=" + search, function(response){
                 for (i=0;i<response.items.length;i++){
@@ -34,13 +34,15 @@ $(document).ready(function(){
                     author = $('<h5>' + response.items[i].volumeInfo.authors + '</h5>');
                     img = $('<img><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="btn">Read More</button></a>');
                     url = response.items[i].volumeInfo.imageLinks.thumbnail;
-                    img.attr('src',url); //attaches the image url to the image
-                    title.appendTo("#result");
-                    author.appendTo("#result");
-                    img.appendTo("#result");
+                    img.attr('src',url);//attaches the image url to the image
+                    title.appendTo('#result');
+                    author.appendTo('#result');
+                    img.appendTo('#result');
                 }
             });
         }
         return false;
     });
 });
+
+$(document).getElementById("#books").value = '';

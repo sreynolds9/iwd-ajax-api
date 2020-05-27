@@ -1,11 +1,14 @@
 $(document).ready(function(){
     $("#recipesform").submit(function () {
         var search = $("#recipes").val();
-        var url = '';
-        var img = '';
-        var title = '';
+        if (search == ""){
+            alert("Nothing to search");
+        }else{
+            var url = "";
+            var img = "";
+            var title = "";
     //make ajax request
- $.get('https://api.spoonacular.com/recipes/search?apiKey=d9f6f58a6ad541a187a2c058f3877948&query=', + search,
+ $.get('https://api.spoonacular.com/recipes/findByIngredients?apiKey=d9f6f58a6ad541a187a2c058f3877948&ingredients=', + search,
         function (data) { //data holds everything that is returned
             //loop through results
             for(let i = 0; i < data.results.length; i++){
@@ -15,38 +18,9 @@ $(document).ready(function(){
                 img.attr('src',url); //attaches the image url to the image
                 title.appendTo("#recipeResults");
                 img.appendTo("#recipeResults");
-            }
-        },
-        'json' //return data type you expect
-    )
+                }
+            });
+        }
+        return false;
+    });
 });
-});
-
-//
-// $(document).ready(function(){
-//     $("#bookform").submit(function () {
-//         var search = $("#books").val();
-//         if (search == ''){
-//             alert("Enter a book to search");
-//         }else{
-//             var url = '';
-//             var img = '';
-//             var title = '';
-//             var author = '';
-//
-//             $.get("https://www.googleapis.com/books/v1/volumes?q=" + search, function(response){
-//                 for (i=0;i<response.items.length;i++){
-//                     title = $('<h5>' + response.items[i].volumeInfo.title + '</h5>');
-//                     author = $('<h5>' + response.items[i].volumeInfo.authors + '</h5>');
-//                     img = $('<img class="card"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="btn">Read More</button></a>');
-//                     url = response.items[i].volumeInfo.imageLinks.thumbnail;
-//                     img.attr('src',url); //attaches the image url to the image
-//                     title.appendTo("#result");
-//                     author.appendTo("#result");
-//                     img.appendTo("#result");
-//                 }
-//             });
-//         }
-//         return false;
-//     });
-// });
