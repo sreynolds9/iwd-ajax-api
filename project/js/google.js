@@ -29,10 +29,12 @@ $(document).ready(function(){
             var author = "";
 
             $.get("https://www.googleapis.com/books/v1/volumes?q=" + search, function(response){
+
+                $("#result").html(''); //clear results on new search
                 for (i=0;i<response.items.length;i++){
-                    title = $('<h3>' + response.items[i].volumeInfo.title + '</h3>');
-                    author = $('<h5>' + response.items[i].volumeInfo.authors + '</h5>');
-                    img = $('<img><br><a href=' + response.items[i].volumeInfo.infoLink + '><button class="btn">Read More</button></a>');
+                    title = $('<h3 class="pt-5">' + response.items[i].volumeInfo.title + '</h3>');
+                    author = $('<h5>Author(s): ' + response.items[i].volumeInfo.authors + '</h5>');
+                    img = $('<img style="width: 250px"><br><a href=' + response.items[i].volumeInfo.infoLink + ' target="_blank"><button class="btn btn-secondary btn-sm my-5">Read More</button></a>');
                     url = response.items[i].volumeInfo.imageLinks.thumbnail;
                     img.attr('src',url);//attaches the image url to the image
                     title.appendTo('#result');
@@ -45,4 +47,3 @@ $(document).ready(function(){
     });
 });
 
-$(document).getElementById("#books").value = '';

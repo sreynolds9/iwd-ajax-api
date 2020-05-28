@@ -11,7 +11,7 @@ include('includes/header.php');
         <form id="bookform">
             <div class="input-field">
                 <h1 class="py-5">Search Books</h1>
-                <input class="search-field p-2" id="books" type="search" placeholder="Search Books...">
+                <input class="search-field p-2" id="books" type="search" onfocus="this.value=''" placeholder="Search Books...">
             </div>
             <button class="btn btn-info py-3 px-5 mt-4">Search</button>
         </form>
